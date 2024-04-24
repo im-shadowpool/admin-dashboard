@@ -11,6 +11,12 @@ import clientRoutes from "./routes/clientRoutes.js";
 import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
 
+/* Import Data */
+import { dataUser } from "./data/index.js";
+
+/* Import Models */
+import User from "./models/userModel.js";
+
 /* Configuration */
 dotenv.config();
 const app = express();
@@ -34,6 +40,9 @@ mongoose.connect(process.env.MONGOURI)
 .then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT} and MongoDB is connected`);
+
+        /* Seed Data */
+        // User.insertMany(dataUser)
     })
 }).catch((err) => {
     console.log(err + "Database connection failed");
