@@ -12,10 +12,13 @@ import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
 
 /* Import Data */
-import { dataUser } from "./data/index.js";
+import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/index.js";
 
 /* Import Models */
 import User from "./models/userModel.js";
+import Products from "./models/productModel.js";
+import ProductStats from "./models/productStatModel.js";
+import Transactions from "./models/transactionsModel.js";
 
 /* Configuration */
 dotenv.config();
@@ -36,14 +39,19 @@ app.use("/sales", salesRoutes);
 
 /* Database Connection */
 const PORT = process.env.PORT || 5000;
-mongoose.connect(process.env.MONGOURI)
-.then(() => {
+mongoose
+  .connect(process.env.MONGOURI)
+  .then(() => {
     app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT} and MongoDB is connected`);
+      console.log(`Server is running on port ${PORT} and MongoDB is connected`);
 
-        /* Seed Data */
-        // User.insertMany(dataUser)
-    })
-}).catch((err) => {
+      /* Seed Data */
+      // User.insertMany(dataUser)
+      // Products.insertMany(dataProduct);
+      // ProductStats.insertMany(dataProductStat);
+      // Transactions.insertMany(dataTransaction);
+    });
+  })
+  .catch((err) => {
     console.log(err + "Database connection failed");
-})
+  });

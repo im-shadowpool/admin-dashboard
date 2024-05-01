@@ -1,5 +1,6 @@
 import {
   Box,
+  Divider,
   Drawer,
   IconButton,
   List,
@@ -13,6 +14,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./flexBetween";
+import profileImg from "../assets/avatar.jpg";
 import {
   AdminPanelSettingsOutlined,
   CalendarMonthOutlined,
@@ -24,6 +26,7 @@ import {
   PointOfSaleOutlined,
   PublicOutlined,
   ReceiptLongOutlined,
+  SettingsOutlined,
   ShoppingCartOutlined,
   TodayOutlined,
   TrendingUpOutlined,
@@ -89,6 +92,7 @@ const sidebarItems = [
 ];
 
 const Sidebar = ({
+  user,
   isSidebarOpen,
   setIsSidebarOpen,
   drawerWidth,
@@ -119,11 +123,12 @@ const Sidebar = ({
               boxSizing: "border-box",
               borderWidth: isNotMobile ? 0 : "2px",
               width: drawerWidth,
+              
             },
           }}
         >
           <Box width={"100%"}>
-            <Box m={"1.5rem 2rem 1rem 3rem"}>
+            <Box m={"1rem 2rem 0.5rem 3rem"}>
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display={"flex"} alignItems={"center"} gap={"0.5rem"}>
                   <Typography variant="h4" fontWeight={"bold"}>
@@ -137,11 +142,32 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
-            <List>
+            <List 
+              sx={{
+                "& .MuiListItemButton-root": {
+                 
+                },
+                ".css-1mxduwu-MuiTypography-root": {
+                  fontSize: "0.9rem",
+                  lineHeight: "1rem",
+                },
+                ".css-4tuiqx-MuiListItemIcon-root": {
+                  minWidth: "48px",
+                },
+                ".css-havevq-MuiSvgIcon-root": {
+                  fontSize: "1.1rem",
+                },
+                ".css-ijllv-MuiButtonBase-root-MuiListItemButton-root":{
+                  paddingTop: "0.45rem",
+                  paddingBottom: "0.45rem",
+                }
+                
+              }}
+            >
               {sidebarItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "1.25rem 0 1rem 2rem" }}>
+                    <Typography key={text} sx={{ m: "1rem 0 1rem 2rem" }}>
                       {text}
                     </Typography>
                   );
@@ -159,6 +185,7 @@ const Sidebar = ({
                           active === lcText
                             ? theme.palette.primary[600]
                             : theme.palette.secondary[200],
+                        
                       }}
                       onClick={() => {
                         navigate(`/${lcText}`);
@@ -185,6 +212,48 @@ const Sidebar = ({
                 );
               })}
             </List>
+          </Box>
+          <Box position={"absolute"} bottom={"1rem"}>
+            <Divider sx={
+              {
+                ".css-rr7dug-MuiDivider-root":{
+                  paddingTop: "0.2rem",
+                }
+              }
+            } />
+            <FlexBetween
+              textTransform={"none"}
+              gap="1rem"
+              m={"1rem 2rem 0 2rem"}
+            >
+              <Box
+                component={"img"}
+                alt="userProfile"
+                src={profileImg}
+                height={"40px"}
+                width={"40px"}
+                borderRadius={"50%"}
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign={"left"}>
+                <Typography
+                  fontWeight={"bold"}
+                  fontSize={"0.9rem"}
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize={"0.7rem"}
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <SettingsOutlined
+                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
