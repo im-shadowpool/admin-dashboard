@@ -59,7 +59,7 @@ const Transactions = () => {
   ];
 
   return (
-    <Box m={"1.5rem 2.5rem"}>
+    <Box m={"0.2rem 2rem"}>
       <Header title="Transactions" subtitle="List of Transactions" />
       <Box
         height={"80vh"}

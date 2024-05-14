@@ -9,3 +9,20 @@ body,
     width: 100%;
     font-family: "Inter", sans-serif;
 }
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #7a7f9d;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #21295c;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7a7f9daf;
+    /* transition: background-color 2s ease; */
+}

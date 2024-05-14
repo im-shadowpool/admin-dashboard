@@ -73,7 +73,7 @@ const Daily = () => {
           </Box>
         </Box>
 
-        {data ? (
+        {data || isLoading ? (
           <ResponsiveLine
             data={formattedData}
             theme={{

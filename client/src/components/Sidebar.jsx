@@ -86,7 +86,7 @@ const sidebarItems = [
     icon: <AdminPanelSettingsOutlined />,
   },
   {
-    text: "Performance",
+    text: "Affiliates",
     icon: <TrendingUpOutlined />,
   },
 ];
