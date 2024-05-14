@@ -89,7 +89,7 @@ const Products = () => {
   console.log(data);
 
   return (
-    <Box m="1rem 2.5rem">
+    <Box m={"1rem 2.5rem"}>
       <Header title={"Products"} subtitle={"See your list of products."} />
       {data || !isLoading ? (
         <Box
