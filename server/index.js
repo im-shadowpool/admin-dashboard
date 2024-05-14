@@ -12,7 +12,7 @@ import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
 
 /* Import Data */
-import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat } from "./data/index.js";
+import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat, dataAffiliateStat } from "./data/index.js";
 
 /* Import Models */
 import User from "./models/userModel.js";
@@ -20,6 +20,7 @@ import Products from "./models/productModel.js";
 import ProductStats from "./models/productStatModel.js";
 import Transactions from "./models/transactionsModel.js";
 import OverallStatsModel from "./models/OverallStats.js";
+import AffiliateStats from "./models/AffiliateStatsModel.js";
 
 /* Configuration */
 dotenv.config();
@@ -47,6 +48,7 @@ mongoose
       console.log(`Server is running on port ${PORT} and MongoDB is connected`);
 
       /* Seed Data */
+      // AffiliateStats.insertMany(dataAffiliateStat);
       // User.insertMany(dataUser)
       // Products.insertMany(dataProduct);
       // ProductStats.insertMany(dataProductStat);
