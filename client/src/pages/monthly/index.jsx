@@ -40,7 +40,7 @@ const Daily = () => {
   }, [data]);
 
   return (
-    <Box m={"1.5rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
       <Header title={"Daily Sales"} subtitle={"Chart of Daily Sales"} />
       <Box height={"75vh"}>
         {data ? (

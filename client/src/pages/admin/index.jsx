@@ -52,10 +52,10 @@ const Admin = () => {
   ];
 
   return (
-    <Box m={"1rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
     <Header title="Admins" subtitle="Managing admins and list of admins" />
     <Box
-      mt={"40px"}
+      mt={"20px"}
       height={"75vh"}
       sx={{
         "& .MuiDataGrid-root": {

@@ -123,7 +123,6 @@ const Sidebar = ({
               boxSizing: "border-box",
               borderWidth: isNotMobile ? 0 : "2px",
               width: drawerWidth,
-              
             },
           }}
         >
@@ -142,26 +141,23 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
-            <List 
+            <List
               sx={{
-                "& .MuiListItemButton-root": {
-                 
-                },
-                ".css-1mxduwu-MuiTypography-root": {
+                "& .MuiListItemButton-root": {},
+                ".MuiTypography-root": {
                   fontSize: "0.9rem",
                   lineHeight: "1rem",
                 },
-                ".css-4tuiqx-MuiListItemIcon-root": {
+                ".MuiListItemIcon-root": {
                   minWidth: "48px",
                 },
-                ".css-havevq-MuiSvgIcon-root": {
+                ".MuiSvgIcon-root": {
                   fontSize: "1.1rem",
                 },
-                ".css-ijllv-MuiButtonBase-root-MuiListItemButton-root":{
+                ".MuiButtonBase-root-MuiListItemButton-root": {
                   paddingTop: "0.45rem",
                   paddingBottom: "0.45rem",
-                }
-                
+                },
               }}
             >
               {sidebarItems.map(({ text, icon }) => {
@@ -185,7 +181,6 @@ const Sidebar = ({
                           active === lcText
                             ? theme.palette.primary[600]
                             : theme.palette.secondary[200],
-                        
                       }}
                       onClick={() => {
                         navigate(`/${lcText}`);
@@ -214,13 +209,13 @@ const Sidebar = ({
             </List>
           </Box>
           <Box position={"absolute"} bottom={"1rem"}>
-            <Divider sx={
-              {
-                ".css-rr7dug-MuiDivider-root":{
+            <Divider
+              sx={{
+                ".css-rr7dug-MuiDivider-root": {
                   paddingTop: "0.2rem",
-                }
-              }
-            } />
+                },
+              }}
+            />
             <FlexBetween
               textTransform={"none"}
               gap="1rem"

@@ -61,8 +61,59 @@ const Dashboard = () => {
       },
     },
   ];
+
+  const downloadReportsDataHandler = () => {
+    const {
+      transactions,
+      totalCustomers,
+      monthlyData,
+      todayStats,
+      thisMonthStats,
+      yearlySalesTotal,
+    } = data;
+    //Downloadind the data from {data} to a CSV file
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "ID,User ID,Created At,No. of Products,Cost\n";
+    transactions.forEach((transaction) => {
+      csvContent += `${transaction._id},${transaction.userId},${transaction.createdAt},${transaction.products.length},${transaction.cost}\n`;
+    });
+    //Page 2
+    csvContent += "\n\n\n";
+    csvContent += "Total Customers\n";
+    csvContent += `${totalCustomers}\n`;
+    //Page 3
+    csvContent += "\n\n\n";
+    csvContent += "Monthly Data\n";
+    csvContent += "Month,Total Sales,Total Units\n";
+    Object.values(monthlyData).forEach(({ month, totalSales, totalUnits }) => {
+      csvContent += `${month},${totalSales},${totalUnits}\n`;
+    });
+    //Page 4
+    csvContent += "\n\n\n";
+    csvContent += "Today Stats\n";
+    csvContent += "Total Sales\n";
+    csvContent += `${todayStats.totalSales}\n`;
+    //Page 5
+    csvContent += "\n\n\n";
+    csvContent += "This Month Stats\n";
+    csvContent += "Total Sales\n";
+    csvContent += `${thisMonthStats.totalSales}\n`;
+    //Page 6
+    csvContent += "\n\n\n";
+    csvContent += "Yearly Sales Total\n";
+    csvContent += `${yearlySalesTotal}\n`;
+    
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "reports.csv");
+    document.body.appendChild(link);
+    link.click();
+  };
+
   return (
-    <Box m={"1.5rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
       <FlexBetween>
         <Header title="Dashboard" subtitle={"Welcome to your Dashboard"} />
         <Box>
@@ -74,6 +125,7 @@ const Dashboard = () => {
               fontWeight: "bold",
               padding: "10px 20px",
             }}
+            onClick={downloadReportsDataHandler}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
             Download Reports

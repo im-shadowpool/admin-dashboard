@@ -44,13 +44,13 @@ const Affiliates = () => {
   ];
 
   return (
-    <Box m={"1rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
       <Header
         title="Affiliates"
         subtitle="Track your Affiliate Sales Performance Here"
       />
       <Box
-        mt={"40px"}
+        mt={"20px"}
         height={"75vh"}
         sx={{
           "& .MuiDataGrid-root": {

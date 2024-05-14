@@ -12,10 +12,10 @@ const Geography = () => {
   console.log(data);
 
   return (
-    <Box m={"1.5rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
       <Header title={"Geography"} subtitle={"Find where your users located"} />
       <Box
-        mt={"40px"}
+        mt={"20px"}
         height={"75vh"}
         border={`1px solid ${theme.palette.secondary.main}`}
         borderRadius={"4px"}
@@ -69,11 +69,11 @@ const Geography = () => {
               unknownColor="#8c91a1"
               label="properties.name"
               valueFormat=".2s"
-              projectionScale={150}
-              projectionTranslation={[0.45, 0.5]}
+              projectionScale={130}
+              projectionTranslation={[0.50, 0.5]}
               projectionRotation={[0, 0, 0]}
-              enableGraticule={true}
-              graticuleLineColor={theme.palette.primary.main}
+              // enableGraticule={true}
+              // graticuleLineColor={theme.palette.primary.main}
               borderWidth={1}
               // borderColor="#ffffff"
               borderColor={{ theme: "grid.line.stroke" }}

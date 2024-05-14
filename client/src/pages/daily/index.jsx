@@ -10,8 +10,8 @@ import { ResponsiveLine } from "@nivo/line";
 const Daily = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetSalesQuery();
-  const [startDate, setStartDate] = useState(new Date("2021-01-27"));
-  const [endDate, setEndDate] = useState(new Date("2021-04-17"));
+  const [startDate, setStartDate] = useState(new Date("2021-02-27"));
+  const [endDate, setEndDate] = useState(new Date("2021-04-15"));
 
   const [formattedData] = useMemo(() => {
     if (!data) return [];
@@ -48,7 +48,7 @@ const Daily = () => {
   }, [data, startDate, endDate]);
 
   return (
-    <Box m={"1.5rem 2.5rem"}>
+    <Box m={"0.5rem 2rem"}>
       <Header title={"Daily Sales"} subtitle={"Chart of Daily Sales"} />
       <Box height={"75vh"}>
         <Box display="flex" justifyContent="flex-end">
