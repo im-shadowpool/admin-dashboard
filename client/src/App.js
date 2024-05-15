@@ -16,6 +16,8 @@ import Monthly from "pages/monthly";
 import Breakdown from "pages/breakdown";
 import Admin from "pages/admin";
 import Affiliates from "pages/affiliates";
+import Search from "pages/search";
+import ErrorPage from "pages/errorpage";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -34,13 +36,15 @@ function App() {
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/geography" element={<Geography />} />
-              {/* <Route path="*">"404 Not Found"</Route> */}
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/affiliates" element={<Affiliates />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="*" element={<ErrorPage />}
+              />
             </Route>
           </Routes>
         </ThemeProvider>

@@ -1,0 +1,99 @@
+.bg-error {
+   
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anonymous Pro", monospace;
+}
+
+.text_404 {
+    margin-top: -80px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_404 h1 {
+    font-size: 15vw;
+    color: white;
+    -webkit-text-stroke: 3px black;
+}
+
+.eye {
+    position: relative;
+    width: 14vw;
+    height: 14vw;
+    display: block;
+    background: white;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.eyeball {
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background: black;
+}
+
+.description {
+    margin-top: -80px;
+    font-size: 4vw;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .text_404 h1 {
+        margin: "auto";
+        font-size: 100px;
+    }
+
+    .eye {
+        width: 95px;
+        height: 95px;
+    }
+
+    .eyeball {
+        width: 65px;
+        height: 65px;
+    }
+
+    .description {
+        font-size: 32px;
+    }
+    .bg-error{
+        margin: 50% auto;
+    }
+}
+/* 
+@media (min-width: 350px) and (max-width: 768px) {
+    .text_404 h1 {
+        font-size: 60px;
+    }
+
+    .eye {
+        width: 60px;
+        height: 60px;
+    }
+
+    .eyeball {
+        width: 40px;
+        height: 40px;
+    }
+    .description{
+        font-size: 28px;
+    }
+    
+}
+ */
+
+
+/* Path: client/src/pages/errorpage/index.js */

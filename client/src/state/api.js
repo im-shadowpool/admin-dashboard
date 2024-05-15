@@ -13,6 +13,7 @@ export const api = createApi({
     "Admins",
     "Affiliates",
     "Dashboard",
+    "Search",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -60,6 +61,10 @@ export const api = createApi({
       query: () => "general/dashboard",
       providesTags: ["Dashboard"],
     }),
+    getSearchResults: build.query({
+      query: (q) => `general/search?q=${q}`,
+      providesTags: ["Search"],
+    }),
   }),
 });
 
@@ -73,4 +78,5 @@ export const {
   useGetAdminsQuery,
   useGetAffiliatesQuery,
   useGetDashboardQuery,
+  useGetSearchResultsQuery,
 } = api;
