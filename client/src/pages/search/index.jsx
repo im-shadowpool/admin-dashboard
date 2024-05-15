@@ -19,6 +19,7 @@ const Search = () => {
         title={"Search"}
         subtitle={`Your Search Resuls are here: ${query}`}
       />
+      {isLoading && <Typography>Loading...</Typography>}
       <Box
         mt={"20px"}
         display={"grid"}
@@ -34,7 +35,6 @@ const Search = () => {
           },
         }}
       >
-        {console.log(data?.searchResultsUser.length)}
         {data?.searchResultsUser.length > 0 && (
           <Box
             backgroundColor={theme.palette.background.alt}
@@ -230,11 +230,10 @@ const Search = () => {
             </Box>
           </Box>
         )}
-        
       </Box>
       {data?.searchResultsUser.length === 0 &&
-          data?.searchResultsProducts.length === 0 &&
-          data?.searchResultsTransactions.length === 0 && <ErrorPage />}
+        data?.searchResultsProducts.length === 0 &&
+        data?.searchResultsTransactions.length === 0 && <ErrorPage />}
     </Box>
   );
 };

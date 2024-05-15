@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef } from "react";
 import "./index.css";
 
@@ -8,7 +9,7 @@ const ErrorPage = () => {
   useEffect(() => {
     const handleMouseMove = (event) => {
       const eye = eyeRef.current;
-      const eyeball = eyeballRef.current;
+      // const eyeball = eyeballRef.current;
 
       const x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
       const y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
