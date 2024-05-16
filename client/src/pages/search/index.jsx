@@ -189,7 +189,7 @@ const Search = () => {
                 variant="h4"
                 fontWeight={600}
               >
-                Product Search Results
+                Transaction Search Results
               </Typography>
             </Box>
             <Box mt={"15px"} ml={"8px"}>
